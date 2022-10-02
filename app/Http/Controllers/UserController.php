@@ -50,7 +50,7 @@ class UserController extends Controller
                 'required',
                 'string',
                 'min:8',
-                'max:10',
+                'max:255',
                 'required_with:verify'
             ],
             'verify' => ['required', 'same:new-password', 'string']
