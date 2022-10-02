@@ -19,7 +19,11 @@ function editIncident(id) {
 
                 });
 
-                editIcon.html(`<a href="#" onclick="modal(${info.incident_id}, ${info.id})"><i class="mdi mdi-playlist-edit fs-3"></i></a>`);
+                editIcon.html(`
+                    <a onclick="modal(${info.incident_id}, ${info.id})">
+                        <i class="mdi mdi-playlist-edit fs-3"></i>
+                    </a>
+                `);
                 cancelbtn.html('<button type="button" class="btn btn-danger btn-close py-1 px-2"></button>');
             }
         }

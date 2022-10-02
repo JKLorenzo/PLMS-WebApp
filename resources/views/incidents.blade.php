@@ -125,19 +125,16 @@
                             @auth
                                 <div class="dropdown float-end">
 
-                                    <a id="dotIcon{{ $incident->id }}" href="#" class="dropdown-toggle card-drop arrow-none"
+                                    <a id="dotIcon{{ $incident->id }}" class="dropdown-toggle card-drop arrow-none"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="mdi mdi-dots-horizontal m-0 text-muted h3"></i>
                                     </a>
                                     <div id="cancelbtn{{ $incident->id }}"></div>
 
-
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item text-success" href="#"
-                                            onclick="addIncident({{ $incident->id }})"><i
+                                        <a class="dropdown-item text-success" onclick="addIncident({{ $incident->id }})"><i
                                                 class="mdi mdi-plus-box fs-5 pe-1"></i><span>Add Info</span></a>
-                                        <a class="dropdown-item text-info" href="#"
-                                            onclick="editIncident({{ $incident->id }})"><i
+                                        <a class="dropdown-item text-info" onclick="editIncident({{ $incident->id }})"><i
                                                 class="fe-edit pe-1"></i><span>Edit Info</span></a>
                                         <a class="dropdown-item text-danger" type="button"
                                             onclick="deleteIncident('{{ route('incident.delete', ['incident' => $incident->id]) }}')" data-bs-toggle="modal"
