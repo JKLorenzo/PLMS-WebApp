@@ -273,9 +273,8 @@ function refreshUnit(id) {
 
     $.ajax({
         type: 'get',
-        url: `/units/${id}/refresh`,
+        url: `units/${id}/refresh`,
         data: $(this).serialize(),
         dataType: 'json',
     });
 }
-
