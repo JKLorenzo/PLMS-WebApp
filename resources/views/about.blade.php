@@ -26,10 +26,14 @@
                         <hr class="container">
                         <div class="mt-4 col-12">
                             <p class="h4 text-success"><b>Contact Us</b></p>
-                            <p class="waves-effect waves-light me-1"><i class="mdi mdi-phone-message me-1"></i>
-                                +639773163348</p>
-                            <p class="waves-effect waves-light me-1"><i
-                                    class="mdi mdi-email-outline me-1"></i>clzplms@gmail.com</p>
+                            <p class="waves-effect waves-light me-1">
+                                <i class="mdi mdi-phone-message me-1"></i>
+                                +639208711217
+                            </p>
+                            <p class="waves-effect waves-light me-1">
+                                <i class="mdi mdi-email-outline me-1"></i>
+                                keanulorenzo32@gmail.com
+                            </p>
                         </div>
                 </div>
             </div>
