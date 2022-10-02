@@ -75,7 +75,7 @@ class UnitsApiController extends Controller
             $response = $this->client->request('GET', '/maps/api/geocode/json', [
                 'query' => [
                     'latlng' => "$latitude,$longitude",
-                    'key' => Config::get('app.maps_key')
+                    'key' => Config::get('app.geolocation_key')
                 ]
             ]);
 

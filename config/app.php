@@ -58,6 +58,8 @@ return [
 
     'maps_key' => env('MAPS_KEY'),
 
+    'geolocation_key' => env('GEOLOCATION_KEY'),
+
     'asset_url' => env('ASSET_URL', null),
 
     /*
