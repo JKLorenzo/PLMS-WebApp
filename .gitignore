@@ -9,8 +9,8 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
-.env.backup
+*.env
+postgresql_data
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json

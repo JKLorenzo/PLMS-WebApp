@@ -211,7 +211,7 @@
         </div>
     </div>
 
-    <script src="{{ mix('js/incidents.js') }}"> </script>
+    <script src="{{ subdirMix('js/incidents.js') }}"> </script>
 
     @auth
         <footer class="footer">
@@ -224,7 +224,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="text-md-end footer-links d-none d-sm-block">
-                            <a href="/about">PLMS-CLZ</a>
+                            <a href="{{ route('about') }}">PLMS-CLZ</a>
                         </div>
                     </div>
                 </div>
@@ -235,5 +235,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
 @endsection

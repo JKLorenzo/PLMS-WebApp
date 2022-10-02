@@ -22,7 +22,7 @@ mix.sass("resources/sass/bootstrap.scss", "public/css")
     )
     .copy("resources/images", "public/images")
     .copy(
-        "resources/js/{*.min.js,*.min.js.map,units.js,button-theme-settings.js,incidents.js,vendor.*}",
+        "resources/js/{*.min.js,units.js,button-theme-settings.js,incidents.js,vendor.*}",
         "public/js"
     )
     .copy("resources/js/pages", "public/js/pages")

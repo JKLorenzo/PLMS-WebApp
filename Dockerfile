@@ -8,13 +8,19 @@ RUN apt-get update -y && \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
   curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
   apt-get install -y nodejs && \
-  npm install -g npm 
+  npm install -g npm
 
 COPY . .
 
-RUN composer install && \
-  npm ci && \
-  npm run production
+COPY ./production.env ./.env
+
+RUN composer install && npm ci && npm run production
+
+RUN usermod -u 1000 www-data
+
+COPY --chown=www-data:www-data . /app
+
+USER www-data
 
 EXPOSE 8000
 

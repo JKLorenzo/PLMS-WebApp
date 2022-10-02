@@ -8,7 +8,7 @@
         type="text/css" />
     <link href="{{ asset('libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ mix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <link href="{{ subdirMix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
 @endsection
 
 @section('content')
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-sm-block">
-                        <a href="/about">PLMS-CLZ</a>
+                        <a href="{{ route('about') }}">PLMS-CLZ</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
     </style>
 @endsection
 @section('script')
-    <script src="{{ mix('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
 
     <script src="{{ asset('libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
@@ -124,7 +124,7 @@
     <script src="{{ asset('libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/pdfmake.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/vfs_fonts.js') }}"></script>
-    <script src="{{ mix('js/pages/datatables.init.js') }}"></script>
+    <script src="{{ subdirMix('js/pages/datatables.init.js') }}"></script>
 
     {{-- <script>
         $(document).ready(function() {

@@ -10,7 +10,7 @@
         <div class="col-lg-4 container mt-5">
             <div class="card text-center">
                 <div class="card-body bg-light">
-                    <img src="{{ mix('images/user-3.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
+                    <img src="{{ subdirMix('images/user-3.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
                         alt="profile-image">
 
                     <h4 class="mb-0">{{ Auth::user()->name }}</h4>
@@ -62,13 +62,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-sm-block">
-                        <a href="/about">PLMS-CLZ</a>
+                        <a href="{{ route('about') }}">PLMS-CLZ</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 @section('script')
-    <script src="{{ asset('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
 @endsection
 @endsection

@@ -2,7 +2,7 @@ window._ = require("lodash");
 
 try {
     require("bootstrap");
-} catch (e) {}
+} catch (e) { }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -32,4 +32,5 @@ window.Echo = new Echo({
     forceTLS: process.env.MIX_APP_DEBUG ? false : undefined,
     wsPort: process.env.MIX_APP_DEBUG ? 6001 : undefined,
     wsHost: process.env.MIX_APP_DEBUG ? window.location.hostname : undefined,
+    authEndpoint: (process.env.MIX_APP_DEBUG ? '' : `/${process.env.MIX_APP_DIR}`) + '/broadcasting/auth',
 });

@@ -8,7 +8,7 @@ use App\Models\IncidentInfo;
 use App\Models\Unit;
 
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Config;
 
 class IncidentsController extends Controller
 {
@@ -30,7 +30,7 @@ class IncidentsController extends Controller
     public function index()
     {
         return view('incidents', [
-            'apiKey' => env('MAPS_KEY', 'AIzaSyA2vqdxEToK1qKnxm14YrCwJ1xoLd1FcBU'),
+            'apiKey' => Config::get('app.maps_key'),
             'incidents' => Incident::orderBy('created_at', 'desc')->get()
         ]);
     }
@@ -49,7 +49,7 @@ class IncidentsController extends Controller
         })->toArray();
 
         return view('create-incidents', [
-            'apiKey' => env('MAPS_KEY', 'AIzaSyA2vqdxEToK1qKnxm14YrCwJ1xoLd1FcBU'),
+            'apiKey' => Config::get('app.maps_key'),
             'units' => Unit::whereIn('id', $unit_ids)->get()
         ]);
     }

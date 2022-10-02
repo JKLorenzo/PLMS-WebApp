@@ -1,0 +1,44 @@
+version: '3'
+services:
+  app:
+    container_name: PLMS-Web
+    image: jklorenzo/plms-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - shared_volume:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - pgsql
+  pgsql:
+    container_name: PLMS-PostgreSQL
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=laravel_docker
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql/data/
+  redis:
+    container_name: PLMS-Redis
+    image: redis
+    command: redis-server
+    restart: unless-stopped
+  release:
+    container_name: PLMS-Release
+    image: jklorenzo/plms-web
+    build:
+      context: .
+    working_dir: /app
+    entrypoint: sh -c "./release.sh"
+    volumes:
+      - shared_volume:/app
+    depends_on:
+      - app
+    restart: "no"
+volumes:
+  shared_volume:

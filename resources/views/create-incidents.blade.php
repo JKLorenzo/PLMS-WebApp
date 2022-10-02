@@ -261,7 +261,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-sm-block">
-                        <a href="/about">PLMS-CLZ</a>
+                        <a href="{{ route('about') }}">PLMS-CLZ</a>
                     </div>
                 </div>
             </div>
@@ -270,7 +270,7 @@
 @endsection
 
 @section('script')
-    <script src="{{ mix('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
@@ -280,5 +280,5 @@
     <script src="{{ asset('libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/pdfmake.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/vfs_fonts.js') }}"></script>
-    <script src="{{ mix('js/pages/datatables.init.js') }}"></script>
+    <script src="{{ subdirMix('js/pages/datatables.init.js') }}"></script>
 @endsection

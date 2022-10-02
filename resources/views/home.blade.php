@@ -153,5 +153,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
 @endsection

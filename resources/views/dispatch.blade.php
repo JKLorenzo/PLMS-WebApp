@@ -161,7 +161,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-sm-block">
-                        <a href="/about">PLMS-CLZ</a>
+                        <a href="{{ route('about') }}">PLMS-CLZ</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +169,7 @@
     </footer><!-- end card-->
 @endsection
 @section('script')
-    <script src="{{ mix('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
     <script src="{{ asset('libs/bootstrap-table/bootstrap-table.min.js') }}"></script>
-    <script src="{{ mix('js/pages/bootstrap-tables.init.js') }}"></script>
+    <script src="{{ subdirMix('js/pages/bootstrap-tables.init.js') }}"></script>
 @endsection

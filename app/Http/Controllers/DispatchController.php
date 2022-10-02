@@ -7,6 +7,7 @@ use App\Models\Unit;
 use App\Models\Lineman;
 use App\Notifications\Dispatch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Notification;
 
 class DispatchController extends Controller
@@ -29,7 +30,7 @@ class DispatchController extends Controller
     public function index()
     {
         return view('dispatch', [
-            'apiKey' => env('MAPS_KEY', 'AIzaSyA2vqdxEToK1qKnxm14YrCwJ1xoLd1FcBU'),
+            'apiKey' => Config::get('app.maps_key'),
             'incidents' => Incident::where('resolved', false)->get(),
             'linemen' => Lineman::all(),
             'units' => Unit::where('status', 'fault')->get(),

@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="body border-info">
                     <div class="card-body" style=";">
-                        <img src="{{ mix('images/logo.png') }}" class="m-auto d-flex justify-content-center p-4"
+                        <img src="{{ subdirMix('images/logo.png') }}" class="m-auto d-flex justify-content-center p-4"
                             style="object-fit: cover; width: 300px; height: 300px;">
 
                         <form method="POST" action="{{ route('login') }}">

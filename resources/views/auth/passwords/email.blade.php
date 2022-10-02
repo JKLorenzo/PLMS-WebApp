@@ -68,7 +68,7 @@
         </div>
         <div>
             <div class="container d-flex justify-content-center p-1 fs-5">
-                <a href="/login" class="waves-effect waves-light btn btn-info">
+                <a href="{{ route('login') }}" class="waves-effect waves-light btn btn-info">
                     <span>
                         <i class="mdi mdi-keyboard-return"></i> <span>Back to Login </span>
                     </span>

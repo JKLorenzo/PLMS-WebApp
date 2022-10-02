@@ -10,8 +10,8 @@ use App\Models\Incident;
 use App\Models\Unit;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class UnitsApiController extends Controller
 {
@@ -75,7 +75,7 @@ class UnitsApiController extends Controller
             $response = $this->client->request('GET', '/maps/api/geocode/json', [
                 'query' => [
                     'latlng' => "$latitude,$longitude",
-                    'key' => env('MAPS_KEY', 'AIzaSyA2vqdxEToK1qKnxm14YrCwJ1xoLd1FcBU')
+                    'key' => Config::get('app.maps_key')
                 ]
             ]);
 

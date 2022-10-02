@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+    <link href="{{ subdirMix('css/reset.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Unit;
+use Illuminate\Support\Facades\Config;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'apiKey' => env('MAPS_KEY', 'AIzaSyA2vqdxEToK1qKnxm14YrCwJ1xoLd1FcBU'),
+            'apiKey' => Config::get('app.maps_key'),
             'heatmapData' => Unit::where('status', 'fault')->get(['id', 'status', 'latitude', 'longitude'])
         ]);
     }

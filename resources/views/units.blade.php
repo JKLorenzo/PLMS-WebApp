@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('head')
-    <link href="{{ asset('libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ asset('libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css') }}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ mix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-    <link href="{{ mix('css/units.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ subdirMix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
+        id="bs-default-stylesheet" />
+    <link href="{{ subdirMix('css/units.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="{{ asset('libs/tippy.js/tippy.all.min.js') }}"></script>
@@ -56,7 +56,8 @@
                                                 <a href="" class="btn btn-light btn-sm" data-bs-toggle="dropdown"
                                                     aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="/units/{{ $unit->id }}/logs"><i
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('unit.logs', ['id' => $unit->id]) }}"><i
                                                             class="mdi mdi-format-list-bulleted me-2 text-muted font-18 vertical-middle"></i>Logs</a>
                                                     <a id="refreshbtn[{{ $unit->id }}]"
                                                         onclick="refreshUnit({{ $unit->id }});" class="dropdown-item"
@@ -70,7 +71,7 @@
                                             </div>
                                         </td>
                                         {{-- <td>
-                                                <a href="/units/{{ $unit->id }}/logs" type="button"
+                                                <a href="{{ route('unit.logs', ['id' => $unit->id]) }}" type="button"
                                                     class="btn border-0 float-end p-0">
                                                     <i class="mdi mdi-format-list-bulleted fs-5" title="Logs" tabindex="0"
                                                         data-plugin="tippy" data-tippy-placement="top"></i>
@@ -102,7 +103,7 @@
                 </div>
             </div>
         </div><!-- end col -->
-        <script src="{{ mix('js/units.js') }}"></script>
+        <script src="{{ subdirMix('js/units.js') }}"></script>
 
         <style>
             .fe-refresh-ccw {
@@ -113,7 +114,6 @@
                 transform: rotate(-2160deg);
                 transition: transform 2s linear;
             }
-
         </style>
 
     </div>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-sm-block">
-                        <a href="/about">PLMS-CLZ</a>
+                        <a href="{{ route('about') }}">PLMS-CLZ</a>
                     </div>
                 </div>
             </div>
@@ -153,14 +153,13 @@
                 display: none;
             }
         }
-
     </style>
 
     @include('modals.units')
 @endsection
 
 @section('script')
-    <script src="{{ mix('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
@@ -170,7 +169,7 @@
     <script src="{{ asset('libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/pdfmake.min.js') }}"></script>
     <script src="{{ asset('libs/pdfmake/build/vfs_fonts.js') }}"></script>
-    <script src="{{ mix('js/pages/datatables.init.js') }}"></script>
+    <script src="{{ subdirMix('js/pages/datatables.init.js') }}"></script>
     <script>
         $(document).ready(function() {
             Echo.private("Units").listen("UnitUpdate", (unit) => {

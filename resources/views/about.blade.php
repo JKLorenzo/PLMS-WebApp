@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-    {{-- <link rel="stylesheet" href="{{ mix('css/icons.min.css') }}" type="text/css" /> --}}
+    {{-- <link rel="stylesheet" href="{{ subdirMix('css/icons.min.css') }}" type="text/css" /> --}}
 @endsection
 
 
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="text-md-end footer-links d-none d-sm-block">
-                            <a href="/about">PLMS-CLZ</a>
+                            <a href="{{ route('about') }}">PLMS-CLZ</a>
                         </div>
                     </div>
                 </div>
@@ -56,5 +56,5 @@
 @endsection
 
 @section('script')
-        <script src="{{mix('js/vendor.js')}}"></script>
+    <script src="{{ subdirMix('js/vendor.js') }}"></script>
 @endsection

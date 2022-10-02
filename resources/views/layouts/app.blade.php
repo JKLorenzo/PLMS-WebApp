@@ -10,22 +10,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    @yield("head")
+    @yield('head')
 
-    <link rel="shortcut icon" href="{{ mix('images/logo.png') }}" />
+    <link rel="shortcut icon" href="{{ subdirMix('images/logo.png') }}" />
 
-    <link href="{{ mix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
+    <link href="{{ subdirMix('css/config/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
-    <link href="{{ mix('css/config/app.min.css') }}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+    <link href="{{ subdirMix('css/config/app.min.css') }}" rel="stylesheet" type="text/css"
+        id="app-default-stylesheet" />
 
-    <link href="{{ mix('css/config/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css"
+    <link href="{{ subdirMix('css/config/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css"
         id="bs-dark-stylesheet" />
-    <link href="{{ mix('css/config/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+    <link href="{{ subdirMix('css/config/app-dark.min.css') }}" rel="stylesheet" type="text/css"
+        id="app-dark-stylesheet" />
 
-    <link rel="stylesheet" href="{{ mix('css/icons.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ subdirMix('css/icons.min.css') }}" type="text/css" />
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <script src="{{ mix('js/app.js') }}"></script>
+    <link href="{{ subdirMix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ subdirMix('js/app.js') }}"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
@@ -66,7 +68,7 @@
                             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
                                 data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                 aria-expanded="false">
-                                {{-- <img src="{{ mix('images/user-3.jpg') }}" alt="user-image" class="rounded-circle"> --}}
+                                {{-- <img src="{{ subdirMix('images/user-3.jpg') }}" alt="user-image" class="rounded-circle"> --}}
                                 <span class="ms-1">
                                     {{ ucwords(Auth::user()->name) }}<i class="mdi mdi-chevron-down"></i>
                                 </span>
@@ -78,13 +80,13 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="/profile" class="dropdown-item notify-item">
+                                <a href="{{ route('profile') }}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="/user" class="dropdown-item notify-item">
+                                <a href="{{ route('password') }}" class="dropdown-item notify-item">
                                     <i class="fe-lock"></i>
                                     <span>Password</span>
                                 </a>
@@ -97,8 +99,7 @@
                                     <i class="fe-log-out"></i>
                                     <span>Logout</span>
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
 
@@ -123,23 +124,23 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <a href="/" class="logo logo-dark text-center">
+                    <a href="{{ route('home') }}" class="logo logo-dark text-center">
                         <span class="logo-sm">
-                            <img src="{{ mix('images/PLMS.png') }}" alt="" height="25">
+                            <img src="{{ subdirMix('images/PLMS.png') }}" alt="" height="25">
                             <span class="logo-lg-text-light"></span>
                         </span>
                         <span class="logo-lg">
-                            <img src="{{ mix('images/PLMS.png') }}" alt="" height="34">
+                            <img src="{{ subdirMix('images/PLMS.png') }}" alt="" height="34">
                             <span class="logo-lg-text-light"></span>
                         </span>
                     </a>
 
-                    <a href="/" class="logo logo-light text-center">
+                    <a href="{{ route('home') }}" class="logo logo-light text-center">
                         <span class="logo-sm">
-                            <img src="{{ mix('images/PLMS-WHITE.png') }}" alt="" height="25">
+                            <img src="{{ subdirMix('images/PLMS-WHITE.png') }}" alt="" height="25">
                         </span>
                         <span class="logo-lg">
-                            <img src="{{ mix('images/PLMS-WHITE.png') }}" alt="" height="33">
+                            <img src="{{ subdirMix('images/PLMS-WHITE.png') }}" alt="" height="33">
                             {{-- <span class="text-muted ps-1 fs-5">Power Line Monitoring</span> --}}
                         </span>
                     </a>
@@ -153,12 +154,12 @@
                         </li>
                     @else
                         <li>
-                            <a class="nav-link waves-effect waves-light" href="/incidents" role="button">
+                            <a class="nav-link waves-effect waves-light" href="{{ route('incidents') }}" role="button">
                                 Incidents
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link waves-effect waves-light" href="/about" role="button">
+                            <a class="nav-link waves-effect waves-light" href="{{ route('about') }}" role="button">
                                 About Us
                             </a>
                         </li>
@@ -176,27 +177,27 @@
                         <ul id="side-menu">
                             <li class="menu-title">Power Line Monitoring</li>
                             <li>
-                                <a href="/">
+                                <a href="{{ route('home') }}">
                                     <i class="fe-home"></i>
                                     <span> Home </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/incidents" id="toggle-btn">
+                                <a href="{{ route('incidents') }}" id="toggle-btn">
                                     <i data-feather="clipboard"></i>
                                     <span> Incidents </span>
                                 </a>
                                 {{-- <div id="sidebarEmail" class="collapse">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="/incidents">
+                                            <a href="{{ route('incidents') }}">
                                                 <i class="fe-corner-down-right"></i>
                                                 View
                                             </a>
                                         </li>
                                         <li>
 
-                                            <a href="/incidents/create">
+                                            <a href="{{ route('incident.create') }}">
                                                 <i class="fe-corner-down-right"></i>
                                                 Create
                                             </a>
@@ -214,7 +215,6 @@
                                     transform: rotate(90deg);
                                     transition: transform 0.2s linear;
                                 }
-
                             </style>
                             <script>
                                 $(document).ready(function() {
@@ -237,21 +237,21 @@
                                 });
                             </script>
                             <li>
-                                <a href="/lineman">
+                                <a href="{{ route('lineman') }}">
                                     <i data-feather="users"></i>
                                     <span> Linemen </span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/units">
+                                <a href="{{ route('units') }}">
                                     <i class="text-muted mdi mdi-sim"></i>
                                     <span> Units </span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/dispatch">
+                                <a href="{{ route('dispatch') }}">
                                     <i class="text-muted mdi mdi-car-arrow-right"></i>
                                     <span> Dispatch </span>
                                 </a>
@@ -270,7 +270,7 @@
             <div class="content-page p-0">
                 <div class="content">
                     <div class="container-fluid p-0">
-                        @yield("content")
+                        @yield('content')
                     </div>
                 </div>
             </div>
@@ -339,11 +339,10 @@
 
     <div class="rightbar-overlay"></div>
 
-    <script src="{{ mix('js/button-theme-settings.js') }}"></script>
-
-    <script src="{{ mix('js/vendor.min.js') }}"></script>
+    <script src="{{ subdirMix('js/button-theme-settings.js') }}"></script>
+    <script src="{{ subdirMix('js/vendor.min.js') }}"></script>
     <script src="{{ asset('libs/moment/min/moment.min.js') }}"></script>
-    <script src="{{ mix('js/app.min.js') }}"></script>
+    <script src="{{ subdirMix('js/app.min.js') }}"></script>
 
     @auth
         <script>
@@ -365,7 +364,7 @@
 
             Echo.private("Units").listen("UnitUpdate", (unit) => {
                 const onclick = () => {
-                    window.location = `{{ url('/units/${unit.id}/logs') }}`;
+                    window.location = "{{ route('unit.logs', ['id' => 'unit_id']) }}".replace('unit_id', unit.id);
                 }
 
                 if (unit.status === "fault") {
@@ -382,7 +381,7 @@
             Echo.private("Incidents").listen("IncidentUpdate", (data) => {
                 toastr.info(`Incident ID: ${data.incident.id}`, 'Incident Updated!', {
                     onclick: () => {
-                        window.location = `{{ url('/incidents#${data.incident.id}') }}`;
+                        window.location = `{{ route('incidents') }}#${data.incident.id}`;
                     }
                 });
             })
