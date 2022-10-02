@@ -49,7 +49,8 @@ Route::post('/incidents/{id}/dispatch', [DispatchController::class, 'store'])
 Route::resource('/incidents', IncidentsController::class)
     ->except(['add', 'info', 'update'])
     ->name('index', 'incidents')
-    ->name('store', 'indicent.create');
+    ->name('store', 'indicent.create')
+    ->name('destroy', 'incident.delete');
 
 Route::post('/incidents/{id}/add', [IncidentsController::class, 'add'])
     ->name('incidents.add');

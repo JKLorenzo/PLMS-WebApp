@@ -140,7 +140,7 @@
                                             onclick="editIncident({{ $incident->id }})"><i
                                                 class="fe-edit pe-1"></i><span>Edit Info</span></a>
                                         <a class="dropdown-item text-danger" type="button"
-                                            onclick="passID({{ $incident->id }})" data-bs-toggle="modal"
+                                            onclick="deleteIncident('{{ route('incident.delete', ['incident' => $incident->id]) }}')" data-bs-toggle="modal"
                                             data-bs-target="#RemoveIncident">
                                             <i class="fe-delete pe-1"></i><span>Remove</span></a>
                                     </div>

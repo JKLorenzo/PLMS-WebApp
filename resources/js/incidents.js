@@ -102,6 +102,6 @@ function addIncident(id) {
     });
 }
 
-function passID(id) {
-    $('#incident-form').attr('action', `/incidents/${id}`);
+function deleteIncident(route) {
+    $('#incident-form').attr('action', route);
 }
