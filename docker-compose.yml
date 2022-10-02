@@ -9,8 +9,6 @@ services:
     restart: unless-stopped
     volumes:
       - shared_volume:/app
-    ports:
-      - 8000:8000
     depends_on:
       - pgsql
   pgsql:
