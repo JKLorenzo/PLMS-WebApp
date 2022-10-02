@@ -24,19 +24,17 @@ Auth::routes(['register' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware('auth')->name('profile');
-
-
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::resource('/password', UserController::class)
+Route::resource('/user', UserController::class)
     ->except(['show', 'edit', 'update'])
-    ->name('index', 'password');
+    ->name('index', 'user')
+    ->name('store', 'user.update');
+
+Route::get('/user/password', [UserController::class, 'password'])
+    ->name('user.password');
 
 Route::resource('/dispatch', DispatchController::class)->only(['index'])
     ->name('index', 'dispatch');

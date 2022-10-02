@@ -80,13 +80,13 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="{{ route('profile') }}" class="dropdown-item notify-item">
+                                <a href="{{ route('user') }}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="{{ route('password') }}" class="dropdown-item notify-item">
+                                <a href="{{ route('user.password') }}" class="dropdown-item notify-item">
                                     <i class="fe-lock"></i>
                                     <span>Password</span>
                                 </a>

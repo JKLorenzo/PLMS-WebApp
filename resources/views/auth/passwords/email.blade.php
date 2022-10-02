@@ -35,7 +35,7 @@
                             <h3><i class="fa fa-lock fa-3x text-danger"></i></h3>
                             <h4 class="text-center text-dark">Forgot password?</h4>
                             <div class="panel-body">
-                                <form method="POST" action="/password/email">
+                                <form method="POST" action="{{ route('password.email') }}">
                                     @csrf
                                     <div class="form-group pt-3 justify-content-center">
                                         <div class="input-group">

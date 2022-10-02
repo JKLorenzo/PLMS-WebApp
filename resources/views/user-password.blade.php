@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="card-body d-flex justify-content-center">
-                        <form class="form w-75" role="form" method="POST" action="/user">
+                        <form class="form w-75" role="form" method="POST" action="{{ route('user.update') }}">
                             @csrf
                             <div class="form-group p-1">
                                 <label for="inputPasswordOld">Current Password</label>

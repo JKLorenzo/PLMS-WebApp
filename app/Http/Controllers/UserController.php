@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('password');
+        return view('user');
     }
 
     /**
@@ -84,5 +84,9 @@ class UserController extends Controller
         Session::flush();
 
         return redirect('/login');
+    }
+
+    public function password() {
+        return view('user-password');
     }
 }
