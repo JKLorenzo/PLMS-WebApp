@@ -28,17 +28,17 @@ services:
     image: redis
     command: redis-server
     restart: unless-stopped
-  release:
-    container_name: PLMS-Release
+  worker:
+    container_name: PLMS-Worker
     image: jklorenzo/plms-web
     build:
       context: .
     working_dir: /app
-    entrypoint: sh -c "./release.sh"
+    entrypoint: sh -c "./worker.sh"
+    restart: unless-stopped
     volumes:
       - shared_volume:/app
     depends_on:
       - app
-    restart: "no"
 volumes:
   shared_volume:
