@@ -1,7 +1,6 @@
 # GPS-Assisted Power Line Monitoring System
-[![Heroku Deployment](https://github.com/PLMS-CLZ/webapp/actions/workflows/heroku.yml/badge.svg)](https://github.com/PLMS-CLZ/webapp/actions/workflows/heroku.yml)
 
-The GPS-Assisted Power Line Monitoring System is a design project focused on making a system that detects power outages on the distribution transformer-level utilizing GPS technology, handles the dispatching of ground personnel to the affected areas, and keeps a record of all power outages that have been detected by the system. 
+The GPS-Assisted Power Line Monitoring System is a design project focused on making a system that detects power outages on the distribution transformer-level utilizing GPS technology, handles the dispatching of ground personnel to the affected areas, and keeps a record of all power outages that have been detected by theCancel changes system. 
 
 This project is intended for the Northern Negros Electric Cooperative (NONECO) Cadiz City.
 
